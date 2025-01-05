@@ -1,0 +1,382 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Light gradient background for the body */
+  }
+  
+  .container {
+    width: 80%;
+    margin: auto;
+  }
+  
+  header {
+    background: linear-gradient(135deg, #333, #555); /* Dark gradient for the header */
+    color: #fff;
+    padding: 20px 0;
+    position: relative; /* Make the header a relative element */
+  }
+  
+  header h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    animation: fadeInBounce 2s ease-in-out; /* Apply the animation */
+  }
+  
+  /* Keyframes for the fade-in and bounce animation */
+  @keyframes fadeInBounce {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px); /* Start above the original position */
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0); /* Move to the original position */
+    }
+    60% {
+      transform: translateY(-10px); /* Small bounce up */
+    }
+    70% {
+      transform: translateY(0); /* Return to original position */
+    }
+    80% {
+      transform: translateY(-5px); /* Smaller bounce up */
+    }
+    90% {
+      transform: translateY(0); /* Return to original position */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Final position */
+    }
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #00BFFF; /* Light blue hover effect for navigation links */
+  }
+  
+  .hero {
+    background: linear-gradient(135deg, #007BFF, #00BFFF); /* Blue gradient for the hero section */
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  /* Updated Button Styles with Elastic and Animation Effects */
+  .cta-button {
+    background: linear-gradient(45deg, #FF6B6B, #FFA07A); /* Coral gradient for buttons */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(255, 107, 107, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+  }
+  
+  .cta-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(255, 107, 107, 0.3);
+  }
+  
+  .cta-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .cta-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 3px 5px rgba(255, 107, 107, 0.2);
+  }
+  
+  .cta-button span {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+  }
+  
+  .cta-button:hover span {
+    color: #fff;
+  }
+  
+  /* Optional: Add a pulse animation for attention-grabbing buttons */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .cta-button.pulse {
+    animation: pulse 2s infinite;
+  }
+  
+  .features {
+    background: linear-gradient(135deg, #f4f4f4, #e0e0e0); /* Light gray gradient for features section */
+    padding: 50px 0;
+  }
+  
+  .features h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  .feature-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .feature-item {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 250px;
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .feature-item:hover {
+    transform: translateY(-10px); /* Lift the feature item on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Add a subtle shadow on hover */
+  }
+  
+  .feature-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  /* Elastic Button for Features Section */
+  .feature-button {
+    background: linear-gradient(45deg, #4CAF50, #81C784); /* Green gradient for feature buttons */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(76, 175, 80, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .feature-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+  }
+  
+  .feature-button:hover {
+    transform: scale(1.1); /* Elastic effect on hover */
+    box-shadow: 0 6px 8px rgba(76, 175, 80, 0.3); /* Enhanced shadow on hover */
+  }
+  
+  .feature-button:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Ripple effect on hover */
+  }
+  
+  .feature-button:active {
+    transform: scale(0.95); /* Elastic effect on click */
+    box-shadow: 0 3px 5px rgba(76, 175, 80, 0.2); /* Reduced shadow on click */
+  }
+  
+  .feature-button span {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+  }
+  
+  .feature-button:hover span {
+    color: #fff; /* Ensure text color remains white on hover */
+  }
+  .feature-button.pulse {
+    animation: pulse 2s infinite; /* Apply pulse animation */
+  }
+
+.pricing {
+  background: linear-gradient(135deg, #007BFF, #00BFFF); /* Blue gradient for pricing section */
+  color: #fff;
+  padding: 50px 0;
+}
+
+.pricing h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pricing-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.pricing-item {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  width: 250px;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-item:hover {
+  transform: translateY(-10px); /* Lift the pricing item on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+}
+
+.pricing-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.pricing-item p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.pricing-item ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.pricing-item ul li {
+  margin: 10px 0;
+}
+
+.contact {
+  background: linear-gradient(135deg, #FF6B6B, #FFA07A); /* Coral gradient for contact section */
+  color: #fff;
+  padding: 50px 0;
+}
+
+.contact h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact label {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact button {
+  background: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.contact button:hover {
+  background: #0056b3; /* Darker blue on hover */
+}
+
+footer {
+  background: linear-gradient(135deg, #333, #555); /* Dark gradient for footer */
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer p {
+  margin: 0;
+}
+.logo {
+    max-width: 200px; /* Adjust the size of the logo */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute; /* Position the logo absolutely */
+    top: 50%; /* Move the logo 50% from the top */
+    left: 50%; /* Move the logo 50% from the left */
+    transform: translate(-50%, -50%); /* Translate the logo to the center */
+  }
